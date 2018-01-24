@@ -22,7 +22,9 @@ API documentation for Kitabisa White Label
             "code": 200,
             "status": true,
             "message": "Success",
-            "data": {}
+            "data": {
+                "token": "b78f3ec3494ba1a1809c918efff8b21f"
+            }
         }
 
 ### Account Activation [POST /auth/register/activation]
@@ -33,6 +35,215 @@ API documentation for Kitabisa White Label
             "token": "b78f3ec3494ba1a1809c918efff8b21f",
             "password": "12345678"
         }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Login [POST /auth/login]
+
++ Request (application/json)
+
+        {
+            "email": "user@skyshi.com",
+            "password": "12345678"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Login Social [POST /auth/login/social]
+
++ Request (application/json)
+
+        {
+            "provider_name": "Facebook",
+            "provider_uid": "12345678",
+            "access_token": "EAAViKAqZCMswBAM1UqlZBZAF"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "_id": "5a67f684e1f7485ff03b2f6b",
+                "name": "User Skyshi",
+                "email": "user@skyshi.com"
+                "phone": "081222333444",
+                "photo_profile": "url",
+                "location": "id",
+                "address": "Tampomas no 9, Sleman"
+            }
+        }
+
+### Forgot Password [POST /auth/password/forgot]
+
++ Request (application/json)
+
+        {
+            "email": "user@skyshi.com"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Reset Password [POST /auth/password/reset]
+
++ Request (application/json)
+
+        {
+            "token": "b78f3ec3494ba1a1809c918efff8b21f",
+            "password": "12345678"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+## Campaign [/campaigns]
+
+### Create Campaign [POST]
+
++ Request (application/json)
+
+        {
+            "title": "Bencana alam Tambora",
+            "link": "https://kitabisa.com/bencana-alam-tambora",
+            "target": 500000000,
+            "deadline": 1516781054,
+            "category_id": "5a67f684e1f7485ff03b2f6b",
+            "location": "Sleman, Yogyakarta",
+            "main_image": "",
+            "main_video": "https://youtube.com",
+            "short_description": "Lorem ipsum dolor sit amet",
+            "description": "Lorem ipsum dolor sit amet",
+            "is_verified": false,
+            "is_active": false
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### List Campaign [GET /campaigns?page={page}&limit={limit}&q={query}&category_id={category_id}]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": [
+                {
+                    "title": "Bencana alam Tambora",
+                    "link": "https://kitabisa.com/bencana-alam-tambora",
+                    "target": 500000000,
+                    "deadline": 1516781054,
+                    "category_id": "5a67f684e1f7485ff03b2f6b",
+                    "location": "Sleman, Yogyakarta",
+                    "main_image": "",
+                    "main_video": "https://youtube.com",
+                    "short_description": "Lorem ipsum dolor sit amet",
+                    "description": "Lorem ipsum dolor sit amet",
+                    "is_verified": true,
+                    "is_active": true
+                }
+            ]
+        }
+
+### Detail Campaign [GET /campaigns/id={id}]
+
++ Parameters
+    + id: "5a67f684e1f7485ff03b2f6b" (string)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "_id": "5a67f684e1f7485ff03b2f6b",
+                "title": "Bencana alam Tambora",
+                "link": "https://kitabisa.com/bencana-alam-tambora",
+                "target": 500000000,
+                "deadline": 1516781054,
+                "category_id": "5a67f684e1f7485ff03b2f6b",
+                "location": "Sleman, Yogyakarta",
+                "main_image": "",
+                "main_video": "https://youtube.com",
+                "short_description": "Lorem ipsum dolor sit amet",
+                "description": "Lorem ipsum dolor sit amet",
+                "is_verified": true,
+                "is_active": true
+            }
+        }
+
+### Update Campaign [PUT /campaigns/id={id}]
+
++ Parameters
+    + id: "5a67f684e1f7485ff03b2f6b" (string)
+
++ Request (application/json)
+
+        {
+            "title": "Bencana alam Tambora",
+            "link": "https://kitabisa.com/bencana-alam-tambora",
+            "target": 500000000,
+            "deadline": 1516781054,
+            "category_id": "5a67f684e1f7485ff03b2f6b",
+            "location": "Sleman, Yogyakarta",
+            "main_image": "",
+            "main_video": "https://youtube.com",
+            "short_description": "Lorem ipsum dolor sit amet",
+            "description": "Lorem ipsum dolor sit amet",
+            "is_verified": true,
+            "is_active": false
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+### Delete Campaign [DELETE /campaigns/id={id}]
+
++ Parameters
+    + id: "5a67f684e1f7485ff03b2f6b" (string)
 
 + Response 200 (application/json)
 
@@ -54,6 +265,7 @@ API documentation for Kitabisa White Label
             "status": true,
             "message": "Success",
             "data": {
+                "_id": "5a67f684e1f7485ff03b2f6b",
                 "name": "User Skyshi",
                 "email": "user@skyshi.com"
                 "phone": "081222333444",
@@ -82,4 +294,30 @@ API documentation for Kitabisa White Label
             "status": true,
             "message": "Success",
             "data": {}
+        }
+
+### Get Donations [GET /user/donations?page={page}&limit={limit}&q={query}&category_id={category_id}]
+
++ Parameters
+    + page: 1 (number)
+    + limit: 10 (number)
+    + query: "bencana" (string)
+    + category_id: "5a67f684e1f7485ff03b2f6b" (string)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": [
+                {
+                    "campaign_id": "5a67f684e1f7485ff03b2f6b",
+                    "campaign": {
+                        "title": "Bencana alam tambora"
+                    },
+                    "amount": 10000,
+                    "message": "Semoga Berkah"
+                }
+            ]
         }
