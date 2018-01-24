@@ -7,7 +7,18 @@ API documentation for Kitabisa White Label
 
 ## Auth [/auth]
 
-### Register [POST]
+### Register [POST /auth/register]
+
++ Request (application/json)
+
+        {
+            "otp": "123456",
+            "name": "User Skyshi",
+            "email": "user@skyshi.com",
+            "phone_number": "082111333599",
+            "password": "12345678",
+            "referral_code": ""
+        }
 
 + Response 200 (application/json)
 
