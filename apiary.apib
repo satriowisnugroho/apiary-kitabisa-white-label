@@ -12,65 +12,74 @@ API documentation for Kitabisa White Label
 + Request (application/json)
 
         {
-            "otp": "123456",
             "name": "User Skyshi",
-            "email": "user@skyshi.com",
-            "phone_number": "082111333599",
-            "password": "12345678",
-            "referral_code": ""
+            "email": "user@skyshi.com"
         }
 
 + Response 200 (application/json)
 
         {
-            "code": "",
-            "status": "",
-            "message": "",
+            "code": 200,
+            "status": true,
+            "message": "Success",
             "data": {}
         }
 
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+### Account Activation [POST /auth/register/activation]
 
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "token": "b78f3ec3494ba1a1809c918efff8b21f",
+            "password": "12345678"
         }
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
-    + Headers
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+        
+## User [/user]
 
-            Location: /questions/2
+### Get Profile [GET]
 
-    + Body
++ Response 200 (application/json)
 
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "name": "User Skyshi",
+                "email": "user@skyshi.com"
+                "phone": "081222333444",
+                "photo_profile": "url",
+                "location": "id",
+                "address": "Tampomas no 9, Sleman"
             }
+        }
+
+### Update Profile [PUT]
+
++ Request (application/json)
+
+        {
+            "name": "User Skyshi",
+            "phone": "081222333444",
+            "photo_profile": "",
+            "location": "id",
+            "address": "Tampomas no 9, Sleman"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
