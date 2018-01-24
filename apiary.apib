@@ -253,6 +253,49 @@ API documentation for Kitabisa White Label
             "message": "Success",
             "data": {}
         }
+
+### Campaign Donate [POST /campaigns/id={id}/donate]
+
++ Parameters
+    + id: "5a67f684e1f7485ff03b2f6b" (string)
+
++ Request (application/json)
+
+        {
+            "amount": "Bencana alam Tambora",
+            "comment": "https://kitabisa.com/bencana-alam-tambora",
+            "payment_method_id": 1
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
+
+## Campaign [/payments]
+
+### Callback API [POST]
+
++ Request (application/json)
+
+        {
+            "campaign_id": "5a67f684e1f7485ff03b2f6b",
+            "user_id": "5a67f684e1f7485ff03b2f6b",
+            "status": "SUCCESS"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
         
 ## User [/user]
 
