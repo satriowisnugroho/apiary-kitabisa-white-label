@@ -584,6 +584,17 @@ API documentation for Kitabisa White Label
                 "updated_at" : 342342424
             }
         }
+        
+### Book Save [POST /generator/books]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {}
+        }
 
 
 ### Book Update [PUT /generator/books/{id}]
@@ -626,53 +637,67 @@ API documentation for Kitabisa White Label
 
 + Response 200 (application/json)
 
-        [
-            {
-                "id": "1",
-                "name": "category 1"
-            },
-            {
-                "id": "2",
-                "name": "category 2"
-            },
-            {
-                "id": "3",
-                "name": "category 3"
-            },
-            {
-                "id": "4",
-                "name": "category 4"
-            },
-            {
-                "id": "5",
-                "name": "category 5"
-            }
-        ]
+    + Headers
+        
+            X-Total-Count: 5,
+            Access-Control-Expose-Headers: X-Total-Count
+            
+    + Body
+
+            [
+                {
+                    "id": "1",
+                    "name": "category 1"
+                },
+                {
+                    "id": "2",
+                    "name": "category 2"
+                },
+                {
+                    "id": "3",
+                    "name": "category 3"
+                },
+                {
+                    "id": "4",
+                    "name": "category 4"
+                },
+                {
+                    "id": "5",
+                    "name": "category 5"
+                }
+            ]
         
         
 ### Writer List [GET /generator/writers]
 
 + Response 200 (application/json)
 
-        [
-            {
-                "id": "1",
-                "name": "write 1"
-            },
-            {
-                "id": "2",
-                "name": "write 2"
-            },
-            {
-                "id": "3",
-                "name": "write 3"
-            },
-            {
-                "id": "4",
-                "name": "write 4"
-            },
-            {
-                "id": "5",
-                "name": "write 5"
-            }
-        ]
+    + Headers
+        
+            X-Total-Count: 5,
+            Access-Control-Expose-Headers: X-Total-Count
+            
+    + Body
+
+            [
+                {
+                    "id": "1",
+                    "name": "write 1"
+                },
+                {
+                    "id": "2",
+                    "name": "write 2"
+                },
+                {
+                    "id": "3",
+                    "name": "write 3"
+                },
+                {
+                    "id": "4",
+                    "name": "write 4"
+                },
+                {
+                    "id": "5",
+                    "name": "write 5"
+                }
+            ]
