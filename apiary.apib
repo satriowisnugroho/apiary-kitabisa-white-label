@@ -590,10 +590,7 @@ API documentation for Kitabisa White Label
 + Response 200 (application/json)
 
         {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": {}
+           "id": 10
         }
 
 
@@ -667,7 +664,19 @@ API documentation for Kitabisa White Label
                 }
             ]
         
-        
+### Category Detail [GET /generator/categories/{id}]
++ Parameters
+    + id: "1" (string)
+    
+
++ Response 200 (application/json)
+
+        {
+            "id": "4",
+            "name": "category 4"
+        }
+
+
 ### Writer List [GET /generator/writers]
 
 + Response 200 (application/json)
@@ -701,3 +710,15 @@ API documentation for Kitabisa White Label
                     "name": "write 5"
                 }
             ]
+
+### Writer Detail [GET /generator/writers/{id}]
++ Parameters
+    + id: "1" (string)
+    
+
++ Response 200 (application/json)
+
+        {
+            "id": "4",
+            "name": "write 4"
+        }
