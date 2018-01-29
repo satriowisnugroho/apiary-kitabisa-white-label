@@ -364,3 +364,313 @@ API documentation for Kitabisa White Label
                 }
             ]
         }
+        
+## Generator Example [/generator]
+
+### Auth [POST /auth/login]
+
++ Request (application/json)
+
+        {
+            "username": "skyshi",
+            "password": "skyshi"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "name": "admin",
+                "email": "developer@skyshi.com",
+                "token" : "23423sfsdfsvfvfve223r32rdvvdfvdv"
+            }
+        }
+
+### Book List [GET /books?filter={q}&range=[{start},{end}]&sort=[{sort_by},{sort_type}]]
++ Parameters
+    + q: "{"q":"search"}" (string)
+    + start: 0 (number)
+    + end: 10 (number)
+    + sort_by: "name" (string)
+    + sort_type: "asc" (string)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": [
+                {
+                    "name" : "book",
+                    "image" : "http://lorempixel.com/400/200",
+                    "category": {
+                        "id" : "1",
+                        "name" : "novel"
+                    },
+                    "writer" : {
+                        "id" : "1",
+                        "name" : "john doe"
+                    },
+                    "created_at" : 223432423,
+                    "updated_at" : 342342424
+                },
+                {
+                    "name" : "book",
+                    "image" : "http://lorempixel.com/400/200",
+                    "category": {
+                        "id" : "1",
+                        "name" : "novel"
+                    },
+                    "writer" : {
+                        "id" : "1",
+                        "name" : "john doe"
+                    },
+                    "created_at" : 223432423,
+                    "updated_at" : 342342424
+                },
+                {
+                    "name" : "book",
+                    "image" : "http://lorempixel.com/400/200",
+                    "category": {
+                        "id" : "1",
+                        "name" : "novel"
+                    },
+                    "writer" : {
+                        "id" : "1",
+                        "name" : "john doe"
+                    },
+                    "created_at" : 223432423,
+                    "updated_at" : 342342424
+                },
+                {
+                    "name" : "book",
+                    "image" : "http://lorempixel.com/400/200",
+                    "category": {
+                        "id" : "1",
+                        "name" : "novel"
+                    },
+                    "writer" : {
+                        "id" : "1",
+                        "name" : "john doe"
+                    },
+                    "created_at" : 223432423,
+                    "updated_at" : 342342424
+                },
+                {
+                    "name" : "book",
+                    "image" : "http://lorempixel.com/400/200",
+                    "category": {
+                        "id" : "1",
+                        "name" : "novel"
+                    },
+                    "writer" : {
+                        "id" : "1",
+                        "name" : "john doe"
+                    },
+                    "created_at" : 223432423,
+                    "updated_at" : 342342424
+                },
+                {
+                    "name" : "book",
+                    "image" : "http://lorempixel.com/400/200",
+                    "category": {
+                        "id" : "1",
+                        "name" : "novel"
+                    },
+                    "writer" : {
+                        "id" : "1",
+                        "name" : "john doe"
+                    },
+                    "created_at" : 223432423,
+                    "updated_at" : 342342424
+                },
+                {
+                    "name" : "book",
+                    "image" : "http://lorempixel.com/400/200",
+                    "category": {
+                        "id" : "1",
+                        "name" : "novel"
+                    },
+                    "writer" : {
+                        "id" : "1",
+                        "name" : "john doe"
+                    },
+                    "created_at" : 223432423,
+                    "updated_at" : 342342424
+                },
+                {
+                    "name" : "book",
+                    "image" : "http://lorempixel.com/400/200",
+                    "category": {
+                        "id" : "1",
+                        "name" : "novel"
+                    },
+                    "writer" : {
+                        "id" : "1",
+                        "name" : "john doe"
+                    },
+                    "created_at" : 223432423,
+                    "updated_at" : 342342424
+                },
+                {
+                    "name" : "book",
+                    "image" : "http://lorempixel.com/400/200",
+                    "category": {
+                        "id" : "1",
+                        "name" : "novel"
+                    },
+                    "writer" : {
+                        "id" : "1",
+                        "name" : "john doe"
+                    },
+                    "created_at" : 223432423,
+                    "updated_at" : 342342424
+                },
+                {
+                    "name" : "book",
+                    "image" : "http://lorempixel.com/400/200",
+                    "category": {
+                        "id" : "1",
+                        "name" : "novel"
+                    },
+                    "writer" : {
+                        "id" : "1",
+                        "name" : "john doe"
+                    },
+                    "created_at" : 223432423,
+                    "updated_at" : 342342424
+                }
+            ]
+        }
+
+### Book Detail [GET /books/{id}]
++ Parameters
+    + id: "1" (string)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": {
+                "name" : "book",
+                "image" : "http://lorempixel.com/400/200",
+                "description":"dummy text",
+                "category": {
+                    "id" : "1",
+                    "name" : "novel"
+                },
+                "writer" : {
+                    "id" : "1",
+                    "name" : "john doe"
+                },
+                "created_at" : 223432423,
+                "updated_at" : 342342424
+            }
+        }
+
+
+### Book Update [PUT /books/{id}]
++ Parameters
+    + id: "1" (string)
+    
++ Request (application/json)
+
+        {
+            "name": "book update",
+            "image" : "http://lorempixel.com/400/200",
+            "desc" : "test",
+            "category_id": "2",
+            "writer_id": "2"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Update Success",
+            "data": {}
+        }
+
+### Book Delete [DELETE /books/{id}]
++ Parameters
+    + id: "1" (string)
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Delete Success",
+            "data": {}
+        }
+        
+### Category List [GET /categories]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": [
+                {
+                    "id": "1",
+                    "name": "category 1",
+                },
+                {
+                    "id": "2",
+                    "name": "category 2",
+                },
+                {
+                    "id": "3",
+                    "name": "category 3",
+                },
+                {
+                    "id": "4",
+                    "name": "category 4",
+                },
+                {
+                    "id": "5",
+                    "name": "category 5",
+                }
+            ]
+        }
+        
+### Writer List [GET /writers]
+
++ Response 200 (application/json)
+
+        {
+            "code": 200,
+            "status": true,
+            "message": "Success",
+            "data": [
+                {
+                    "id": "1",
+                    "name": "write 1",
+                },
+                {
+                    "id": "2",
+                    "name": "write 2",
+                },
+                {
+                    "id": "3",
+                    "name": "write 3",
+                },
+                {
+                    "id": "4",
+                    "name": "write 4",
+                },
+                {
+                    "id": "5",
+                    "name": "write 5",
+                }
+            ]
+        }
