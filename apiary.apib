@@ -367,7 +367,7 @@ API documentation for Kitabisa White Label
         
 ## Generator Example [/generator]
 
-### Auth [POST /auth/login]
+### Auth [POST /generator/auth/login]
 
 + Request (application/json)
 
@@ -389,13 +389,11 @@ API documentation for Kitabisa White Label
             }
         }
 
-### Book List [GET /books?filter={q}&range=[{start},{end}]&sort=[{sort_by},{sort_type}]]
+### Book List [GET /generator/books?filter={filter}&pagination={pagination}&sort={sort}]
 + Parameters
-    + q: "{"q":"search"}" (string)
-    + start: 0 (number)
-    + end: 10 (number)
-    + sort_by: "name" (string)
-    + sort_type: "asc" (string)
+    + filter: {"q":"search"} (object)
+    + pagination: {"page": 1, "perPage": 10} (object)
+    + sort: {"field": "name", "order":"ASC"} (object)
 
 + Response 200 (application/json)
 
@@ -547,7 +545,7 @@ API documentation for Kitabisa White Label
             ]
         }
 
-### Book Detail [GET /books/{id}]
+### Book Detail [GET /generator/books/{id}]
 + Parameters
     + id: "1" (string)
 
@@ -575,7 +573,7 @@ API documentation for Kitabisa White Label
         }
 
 
-### Book Update [PUT /books/{id}]
+### Book Update [PUT /generator/books/{id}]
 + Parameters
     + id: "1" (string)
     
@@ -598,7 +596,7 @@ API documentation for Kitabisa White Label
             "data": {}
         }
 
-### Book Delete [DELETE /books/{id}]
+### Book Delete [DELETE /generator/books/{id}]
 + Parameters
     + id: "1" (string)
 
@@ -611,7 +609,7 @@ API documentation for Kitabisa White Label
             "data": {}
         }
         
-### Category List [GET /categories]
+### Category List [GET /generator/categories]
 
 + Response 200 (application/json)
 
@@ -643,7 +641,7 @@ API documentation for Kitabisa White Label
             ]
         }
         
-### Writer List [GET /writers]
+### Writer List [GET /generator/writers]
 
 + Response 200 (application/json)
 
