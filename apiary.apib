@@ -397,12 +397,17 @@ API documentation for Kitabisa White Label
 
 + Response 200 (application/json)
 
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": [
+    + Headers
+        
+            X-Total-Count: 10,
+            Access-Control-Expose-Headers: X-Total-Count
+            
+    + Body
+
+            
+            [
                 {
+                    "id" : 1,
                     "name" : "book",
                     "image" : "http://lorempixel.com/400/200",
                     "category": {
@@ -417,6 +422,7 @@ API documentation for Kitabisa White Label
                     "updated_at" : 342342424
                 },
                 {
+                    "id" : 2,
                     "name" : "book",
                     "image" : "http://lorempixel.com/400/200",
                     "category": {
@@ -431,6 +437,7 @@ API documentation for Kitabisa White Label
                     "updated_at" : 342342424
                 },
                 {
+                    "id" : 3,
                     "name" : "book",
                     "image" : "http://lorempixel.com/400/200",
                     "category": {
@@ -445,6 +452,7 @@ API documentation for Kitabisa White Label
                     "updated_at" : 342342424
                 },
                 {
+                    "id" : 4,
                     "name" : "book",
                     "image" : "http://lorempixel.com/400/200",
                     "category": {
@@ -459,6 +467,7 @@ API documentation for Kitabisa White Label
                     "updated_at" : 342342424
                 },
                 {
+                    "id" : 5,
                     "name" : "book",
                     "image" : "http://lorempixel.com/400/200",
                     "category": {
@@ -473,6 +482,7 @@ API documentation for Kitabisa White Label
                     "updated_at" : 342342424
                 },
                 {
+                    "id" : 6,
                     "name" : "book",
                     "image" : "http://lorempixel.com/400/200",
                     "category": {
@@ -487,6 +497,7 @@ API documentation for Kitabisa White Label
                     "updated_at" : 342342424
                 },
                 {
+                    "id" : 7,
                     "name" : "book",
                     "image" : "http://lorempixel.com/400/200",
                     "category": {
@@ -501,6 +512,7 @@ API documentation for Kitabisa White Label
                     "updated_at" : 342342424
                 },
                 {
+                    "id" : 8,
                     "name" : "book",
                     "image" : "http://lorempixel.com/400/200",
                     "category": {
@@ -515,6 +527,7 @@ API documentation for Kitabisa White Label
                     "updated_at" : 342342424
                 },
                 {
+                    "id" : 9,
                     "name" : "book",
                     "image" : "http://lorempixel.com/400/200",
                     "category": {
@@ -529,6 +542,7 @@ API documentation for Kitabisa White Label
                     "updated_at" : 342342424
                 },
                 {
+                    "id" : 10,
                     "name" : "book",
                     "image" : "http://lorempixel.com/400/200",
                     "category": {
@@ -543,7 +557,6 @@ API documentation for Kitabisa White Label
                     "updated_at" : 342342424
                 }
             ]
-        }
 
 ### Book Detail [GET /generator/books/{id}]
 + Parameters
@@ -613,62 +626,53 @@ API documentation for Kitabisa White Label
 
 + Response 200 (application/json)
 
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": [
-                {
-                    "id": "1",
-                    "name": "category 1",
-                },
-                {
-                    "id": "2",
-                    "name": "category 2",
-                },
-                {
-                    "id": "3",
-                    "name": "category 3",
-                },
-                {
-                    "id": "4",
-                    "name": "category 4",
-                },
-                {
-                    "id": "5",
-                    "name": "category 5",
-                }
-            ]
-        }
+        [
+            {
+                "id": "1",
+                "name": "category 1"
+            },
+            {
+                "id": "2",
+                "name": "category 2"
+            },
+            {
+                "id": "3",
+                "name": "category 3"
+            },
+            {
+                "id": "4",
+                "name": "category 4"
+            },
+            {
+                "id": "5",
+                "name": "category 5"
+            }
+        ]
+        
         
 ### Writer List [GET /generator/writers]
 
 + Response 200 (application/json)
 
-        {
-            "code": 200,
-            "status": true,
-            "message": "Success",
-            "data": [
-                {
-                    "id": "1",
-                    "name": "write 1",
-                },
-                {
-                    "id": "2",
-                    "name": "write 2",
-                },
-                {
-                    "id": "3",
-                    "name": "write 3",
-                },
-                {
-                    "id": "4",
-                    "name": "write 4",
-                },
-                {
-                    "id": "5",
-                    "name": "write 5",
-                }
-            ]
-        }
+        [
+            {
+                "id": "1",
+                "name": "write 1"
+            },
+            {
+                "id": "2",
+                "name": "write 2"
+            },
+            {
+                "id": "3",
+                "name": "write 3"
+            },
+            {
+                "id": "4",
+                "name": "write 4"
+            },
+            {
+                "id": "5",
+                "name": "write 5"
+            }
+        ]
